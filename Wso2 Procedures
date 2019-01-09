@@ -1,0 +1,36 @@
+  >>> Download the wso2 Api Manager binary
+      Link ( https://product-dist.wso2.com/products/api-manager/2.6.0/wum-updated-packs/wso2am-2.6.0.zip )
+  >>>Download the Wso2 Anlytics server binary
+      Link ( https://product-dist.wso2.com/products/api-manager/2.6.0/wum-updated-packs/wso2am-analytics-2.6.0.zip )
+   Extract Both the file in same folder
+    
+----------------------------------------------
+1 >> Strated Analytics server from the given path
+      /home/sarathi/Downloads/wso2am-analytics-2.6.0/bin/worker.sh
+-------------------------------------------------------------------
+2 >>Configure API Manager To connect with Analytics server
+  Go to >> wso2am-2.6.0/repository/conf/
+   and open api-manager.xml and edit the <Enabled> value
+   <Analytics>
+        <!-- Enable Analytics for API Manager -->
+        <Enabled>true</Enabled>
+--------------------------------------------------------------------
+
+3 >>Then started Api Manager server from the given path
+    /home/sarathi/Downloads/wso2am-2.6.0/bin/wso2server.sh'  
+
+Testing Initiated
+------------------
+
+ go to https://172.17.0.1:9443/publisher
+  
+status: Working fine (checked by publishingi default pizza api and subscribing that api from api store and testinf through api console
+
+Testing Initiated
+------------------
+
+Extending Default Workflow>>
+
+   Copy and paste the subs-workflow-1.2.0.jar into the <API-M_HOME>/repository/component/lib folder (If you already started the server, 
+    restart it before proceeding further)
+
